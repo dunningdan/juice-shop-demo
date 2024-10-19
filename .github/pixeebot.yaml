@@ -1,3 +1,4 @@
 codemods:
   only:
     - checkmarx:javascript/sql-parameterization
+    - checkmarx:javascript/nosql-parameterization
