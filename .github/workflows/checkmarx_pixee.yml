@@ -1,0 +1,21 @@
+name: "Publish Checkmarx SARIF to Pixee"
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  share:
+    name: Upload Checkmarx Results to Pixeebot
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: pixee/upload-tool-results-action@v1
+        with:
+          tool: checkmarx
+          file: cx.sarif
+
