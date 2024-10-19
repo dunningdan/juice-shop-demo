@@ -16,6 +16,6 @@ jobs:
           fetch-depth: 0
       - uses: pixee/upload-tool-results-action@v1
         with:
-          tool: checkmarx
+          tool: semgrep # Should be checkmarx but the effect of passing --sarif will be the same
           file: cx.sarif
 
